@@ -1,5 +1,5 @@
 .maini{
-    background-color: #3bb077;
+    background-color: rgb(157, 184, 190);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -42,7 +42,7 @@
       margin-right: 10px;
     }
     .button1i button{
-      background: #3bb077;
+      background: rgb(27, 141, 166);
       outline: none;
       border: none;
       color: #fff;

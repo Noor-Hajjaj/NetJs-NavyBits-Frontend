@@ -1,7 +1,9 @@
 import "./feature.css";
 import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 export default function FeaturedInfo() {
+  const navigate = useNavigate();
   return (
     <div className="featured">
       <div className="featuredItem">
@@ -34,8 +36,8 @@ export default function FeaturedInfo() {
         </div>
         <span className="featuredSub">Compared to last month</span>
       </div>
-      <div className="featuredItem">
-        <span className="featuredTitle">Messages</span>
+      <div className="featuredItem" onClick={() => navigate("/messages")}>
+        <span className="featuredTitle" >Messages</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">2,225</span>
           <span className="featuredMoneyRate">

@@ -47,7 +47,7 @@
 
 .widgetLgButton.Add{
     background-color: #e5faf2;
-    color: #3bb077;
+    color: rgb(27, 141, 166);
     font-size: 20px;
 }
 .widgetLgButton.Declined{
@@ -64,7 +64,7 @@
   width: 200px;
   height: 30px;
   margin-right: 70px;
-  border-color: #3bb077;
+  border-color: rgb(27, 141, 166);
   border-radius: 5px;
 }
 input{
@@ -80,7 +80,7 @@ input{
   margin-right: 200px;
 } */
 .upload button{
-  background: #3bb077;
+  background: rgb(27, 141, 166);
   outline: none;
   border: 5px;
   color: #fff;

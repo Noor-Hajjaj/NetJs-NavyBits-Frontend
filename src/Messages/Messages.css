@@ -1,0 +1,80 @@
+.allboxes{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.box1{
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+.box2{
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+.box3{
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+.imagesmall{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.imagesm{
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+}
+.usernamep{
+    padding-left: 20px;
+    font-size: 20px;
+}
+.paragraph{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.p{
+    /* overflow: hidden;
+    display: -webkit-flex;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; */
+    word-break: break-word;
+}
+.topbar_9 {
+    width: 100%;
+    /* margin-top: 10px; */
+    /* height: 50px; */
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .topbarWrapper_9 {
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo_9 {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(27, 141, 166);
+    cursor: pointer;
+  } 
+  .message_0{
+      margin-bottom: 20px;
+  }
