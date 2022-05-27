@@ -1,0 +1,9 @@
+.homeNgo{
+    flex: 4;
+}
+
+.homeWidgetsNgo{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 5px;
+}

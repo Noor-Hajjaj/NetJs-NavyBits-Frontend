@@ -1,0 +1,64 @@
+.maini{
+    background-color: #3bb077;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+  
+  }
+  .popu_headeri{
+    display:flex;
+    justify-content: space-between;
+  }
+  .body1i{
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+  }
+  .lefti{
+    padding-left: 150px;
+  }
+  .namei{
+    padding-left: 20px;
+  }
+  .spacei{
+    margin-bottom: 30px;
+  }
+    
+  .button1i{
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 20px;
+  
+  
+    }
+    .Accept1i{
+      margin-left: 10px;
+    }
+    .Cancel1i{
+      margin-right: 10px;
+    }
+    .button1i button{
+      background: #3bb077;
+      outline: none;
+      border: none;
+      color: #fff;
+      padding: 8px 40px;
+      border-radius: 20px;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      
+    }
+  .container0i {
+      background-color: white;
+      padding: 40px;
+      padding-top: 0;
+      width: 700px;
+  }
+  .closei{
+    cursor: pointer;
+  }
