@@ -1,5 +1,5 @@
 .maink{
-  background-color: #3bb077;
+  background-color: rgb(157, 184, 190);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -35,7 +35,7 @@
   width: 220px;
   height: 30px;
   margin-right: 70px;
-  border-color: #3bb077;
+  border-color: rgb(27, 141, 166);
   border-radius: 5px;
 }
 .spacek{
@@ -57,7 +57,7 @@
     margin-right: 20px;
   }
   .button1k button{
-    background: #3bb077;
+    background: rgb(27, 141, 166);
     outline: none;
     border: none;
     color: #fff;

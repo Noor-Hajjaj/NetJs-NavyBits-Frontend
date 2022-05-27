@@ -78,13 +78,13 @@
   
   .widgetSmButtonNgo.Accept{
       background-color: #e5faf2;
-      color: #3bb077;
+      color: rgb(27, 141, 166);
       font-size: 20px;
       margin-left: 190px;
   }
   .widgetSmButtonNgo.Reject{
     background-color: #e5faf2;
-    color: #3bb077;
+    color: rgb(27, 141, 166);
     font-size: 20px;
     margin-left: 50px;
 }
