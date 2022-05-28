@@ -12,11 +12,11 @@ export const NgoDetail = () => {
 
     const [ngoRequestDetail, setngoRequestDetail] = useState({});
   useEffect(() => {
-    const fetchNGORequests = async () => {
+    const fetchNGORequestDetail = async () => {
       const res = await axios.get(`http://localhost:3003/api/admin/dashboard/getSpecificNgoRequestDetails/${ID}`);
       setngoRequestDetail(res.data);
     };
-    fetchNGORequests();
+    fetchNGORequestDetail();
   });
 
   const acceptNGO = async (e) => {
@@ -50,7 +50,7 @@ export const NgoDetail = () => {
     <div className='body1i'>
     <div className='container0i'>
         <div className='popu_headeri'>
-            <h3>NGO Name</h3>
+            <h3>NGO Details</h3>
             <h3 className='closei' onClick={() => navigate(-1)}>X</h3>
         </div>
         <table className='centertabi'>

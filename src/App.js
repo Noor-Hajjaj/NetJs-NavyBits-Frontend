@@ -11,9 +11,9 @@ function App() {
     <div className="App">
      <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login-admin" element={<Login />} />
           <Route path="/run" element={<Run/>} />
-          <Route path="/caselist" element={<CaseList/>} />
+          <Route path="/caselist/:id" element={<CaseList/>} />
           <Route path="/ngodetails/:id" element={<NgoDetail/>} />
           <Route path="/messages" element={<Messages/>} />
         </Routes>

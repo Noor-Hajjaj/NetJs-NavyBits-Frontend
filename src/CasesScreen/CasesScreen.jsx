@@ -1,100 +1,39 @@
 import "./CasesScreen.css";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function CaseScreen() {
   const navigate = useNavigate();
-  // const Button = ({ type }) => {
-  //   return <button className={"widgetSmButtonCases " + type} >{type}</button>;
-  // };
+
+  const [caseRequests, setcaseRequests] = useState({});
+  useEffect(() => {
+    const fetchCaseRequests = async () => {
+      const res = await axios.get("http://localhost:3003/api/admin/dashboard/getCases");
+      setcaseRequests(res.data);
+    };
+    fetchCaseRequests();
+  },[caseRequests]);
 
   return ( 
          <div className="widgetLgCases">
-      <span className="Cases">Cases request</span>
+      <span className="Cases">Cases requests</span>
       <ul className="widgetSmList">
-        <li className="widgetSmListItemCases">
+        {caseRequests.length > 0 && caseRequests.map((e) => (
+          <li className="widgetSmListItemCases">
           <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            src={e.caseOwner.picture}
             alt=""
             className="widgetSmImgCases"
           />
           <div className="widgetSmUserCases">
-            <span className="widgetSmUserTitleCases">Case Name</span>
-          </div>
-          {/* <div><Button type="Details" /></div> */}
-          <div>
-            <button className="widgetSmButtonCases" onClick={() => navigate("/caselist")}>Details</button>
-          </div>
-          {/* <div><Button type="details" /></div> */}
-        </li>
-        <li className="widgetSmListItemCases">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgCases"
-          />
-          <div className="widgetSmUserCases">
-            <span className="widgetSmUserTitleCases">Case Name</span>
+            <span className="widgetSmUserTitleCases">{e.caseName}</span>
           </div>
           <div>
-            <button className="widgetSmButtonCases" onClick={() => navigate("/caselist")}>Details</button>
-          </div>
-          {/* <div><Button type="details" /></div> */}
-        </li>
-        <li className="widgetSmListItemCases">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgCases"
-          />
-          <div className="widgetSmUserCases">
-            <span className="widgetSmUserTitleCases">Case Name</span>
-          </div>
-          <div>
-            <button className="widgetSmButtonCases" onClick={() => navigate("/caselist")}>Details</button>
-          </div>
-          {/* <div><Button type="details" /></div> */}
-        </li>
-        <li className="widgetSmListItemCases">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgCases"
-          />
-          <div className="widgetSmUserCases">
-            <span className="widgetSmUserTitleCases">Case Name</span>
-          </div>
-          <div>
-            <button className="widgetSmButtonCases" onClick={() => navigate("/caselist")}>Details</button>
-          </div>
-          {/* <div><Button type="details" /></div> */}
-        </li>
-        <li className="widgetSmListItemCases">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgCases"
-          />
-          <div className="widgetSmUserCases">
-            <span className="widgetSmUserTitleCases">Case Name</span>
-          </div>
-          <div>
-            <button className="widgetSmButtonCases" onClick={() => navigate("/caselist")}>Details</button>
-          </div>
-          {/* <div><Button type="details" /></div> */}
-        </li>
-        <li className="widgetSmListItemCases">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgCases"
-          />
-          <div className="widgetSmUserCases">
-            <span className="widgetSmUserTitleCases">Case Name</span>
-          </div>
-          <div>
-            <button className="widgetSmButtonCases" onClick={() => navigate("/caselist")}>Details</button>
+            <button className="widgetSmButtonCases" onClick={() => navigate(`/caselist/${e._id}`)}>Details</button>
           </div>
         </li>
+        )) }
       </ul>
     </div>
   );

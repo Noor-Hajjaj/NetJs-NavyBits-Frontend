@@ -1,6 +1,8 @@
 import "./widgetLg.css";
 import { Uploader } from "uploader";
 import { UploadButton } from "react-uploader";
+import { useRef } from "react";
+import axios from "axios";
 
 export default function WidgetLg() {
   const uploader = new Uploader({
@@ -8,8 +10,28 @@ export default function WidgetLg() {
     apiKey: "free"
   });
   const Button = ({ type }) => {
-    return <button className={"widgetLgButton " + type}>{type}</button>;
+    return <button className={"widgetLgButton " + type} onClick={addService}>{type}</button>;
   };
+
+  const name = useRef();
+
+  const addService = async (e) => {
+    e.preventDefault();
+    const body = {
+      name: name.current.value,
+      picture:"https://res.cloudinary.com/caretopia/image/upload/v1649928189/caretopia/services/medical_help_ddi55o.png",
+    };
+    try{
+      await axios.post("http://localhost:3003/api/admin//services/addService",body).then((response) => {
+        alert(response.data.message);
+    })
+    }catch (e) {
+      if (e.response && e.response.data) {
+        alert(e.response.data.message);
+      }
+    }
+  }
+
   return (
     <div className="widgetLg">
       <h3 className="widgetLgTitle">Add a new service</h3>
@@ -20,7 +42,7 @@ export default function WidgetLg() {
           </td>
           <td className="widgetLgDate">
             <div className="inputt">
-            <input type="text" placeholder="Enter your name" required/>
+            <input type="text" placeholder="Enter service name" required ref={name}/>
             </div>
             </td>
           <td className="widgetLgAmount"></td>

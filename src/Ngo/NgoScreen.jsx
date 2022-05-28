@@ -21,7 +21,7 @@ export default function NgoScreen() {
 
   return (
     <div className="widgetNgo">
-      <span className="widgetSmTitleNgo">NGO request</span>
+      <span className="widgetSmTitleNgo">NGO requests</span>
       <ul className="widgetSmList">
         {ngoRequests.length > 0 && ngoRequests.map((e) => (
           <li className="widgetSmListItemNgo">
