@@ -27,7 +27,7 @@
 .widgetSmListItem{
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
+    /* justify-content: space-around; */
     margin: 20px 0px;
 }
 
@@ -44,10 +44,10 @@
 .widgetSmUserTitle{
     font-weight: 300;
     font-size: 20px;
-    padding-left: 80px;
+    padding-left: 50px;
 }
 
-.widgetSmButton{
+/* .buttonlk{
     display: flex;
     align-items: center;
     border: none;
@@ -56,7 +56,8 @@
     background-color: #eeeef7;
     color: #555;
     cursor: pointer;
-}
+    margin-left: 400px;
+} */
 
 .widgetSmIcon{
     font-size: 16px !important;

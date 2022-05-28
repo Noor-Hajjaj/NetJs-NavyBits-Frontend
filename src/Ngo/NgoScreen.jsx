@@ -33,7 +33,7 @@ export default function NgoScreen() {
           <div className="widgetSmUserNgo">
             <span className="widgetSmUserTitleNgo" onClick={() => navigate(`/ngodetails/${e._id}`)}>{e.username}</span>
           </div>
-          <div><button className="widgetLgButtonNgo" onClick={() => navigate(`/ngodetails/${e._id}`)}>Details</button></div>
+          <div className="deatilsm"><button className="widgetLgButtonNgo" onClick={() => navigate(`/ngodetails/${e._id}`)}>Details</button></div>
           
         </li>
         ))}

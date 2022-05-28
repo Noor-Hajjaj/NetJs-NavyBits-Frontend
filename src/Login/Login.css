@@ -11,7 +11,7 @@
   justify-content: space-between;
 }
 .texttypek{
-    padding-left: 54px;
+    padding-left: 0px;
 }
 .body1k{
     min-height: 100vh;
@@ -24,11 +24,12 @@
   padding-left: 150px;
 }
 .namek{
-  /* padding-left: 10px;
-  padding-bottom: 10px; */
+  /* padding-left: 5px; */
+  /* padding-bottom: 10px; */
 
 }
 .smile{
+  padding-left: 7px;
   /* padding-bottom: 200px; */
 }
 .namek input{
@@ -76,4 +77,7 @@
 }
 .closek{
   cursor: pointer;
+}
+.leftkk{
+
 }

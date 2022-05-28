@@ -15,15 +15,17 @@
 
  .widgetLgButtonNgo {
     padding: 5px 9px;
-    border: none;
-    border-radius: 20px;
-    width: 150px;
-    margin-top:0px ;
-    margin-left: 105px;
-    cursor: pointer;
-    background-color: #e5faf2;
-    color: rgb(27, 141, 166);
-    font-size: 20px;
+     border: none;
+  border-radius: 20px;
+  width: 150px;
+  margin-top:0px ;
+  cursor: pointer;
+  background-color: #e5faf2;
+  color: rgb(27, 141, 166);
+  font-size: 20px;
+  }
+  .deatilsm{
+    padding-left: 410px;
   }
 
   /* .widgetSmButtonCases {
@@ -62,7 +64,7 @@
 .widgetSmListItemNgo{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin: 20px 0px;
 }
 
@@ -79,25 +81,24 @@
     cursor: pointer;
     font-weight: 300;
     font-size: 20px;
-    padding-left: 80px;
+    padding-left: 50px;
     display: flex;
     width: 100px;
 }
 
-.widgetSmButtonNgo{
+/* .widgetSmButtonNgo{
     padding: 5px 9px;
     border: none;
     border-radius: 20px;
     width: 150px;
     margin-top:0px ;
     cursor: pointer;
-  }
+  } */
   
   .widgetSmButtonNgo.Accept{
       background-color: #e5faf2;
       color: rgb(27, 141, 166);
       font-size: 20px;
-      margin-left: 190px;
   }
   .widgetSmButtonNgo.Reject{
     background-color: #e5faf2;

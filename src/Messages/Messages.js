@@ -59,6 +59,24 @@ const Messages = () => {
                 <p className="p">Loving the app!!</p>
               </div>
             </div>
+
+            <div className="box2">
+              <div className="imagesm">
+                <img
+                  src={e.messageOwner.picture}
+                  alt=""
+                  className="imagesmall"
+                />
+                <div className="usernamep">
+                  <p>{e.messageOwner.username} </p>
+                </div>
+              </div>
+              <hr />
+              <div className="paragraph">
+                <p className="p">Loving the app!!</p>
+              </div>
+            </div>
+            
           </div>
         ))}
       {/* <div className="allboxes">

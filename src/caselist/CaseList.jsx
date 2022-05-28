@@ -52,11 +52,11 @@ const declineCase = async (e) => {
         <div className='popu_header'>
             <h3>Case Details</h3>
             <h3 className='close' onClick={() => navigate(-1)}>X</h3>
-        </div>
+</div>
         <table className='centertab'>
-            <div className='space'>
+            <div >
             <tr>
-                <td className='left'>
+                <td className='leftname'>
                     Full Name:
                 </td>
                 <div className='name'>
@@ -69,7 +69,7 @@ const declineCase = async (e) => {
             </div>
             <div className='space'>
             <tr>
-                <td className='left'>
+                <td className='leftname'>
                     Case Name:
                 </td>
                 <div className='name'>
@@ -80,26 +80,27 @@ const declineCase = async (e) => {
                 
             </tr>
             </div>
-            <div className='space'>
+            <div className='space' >
             <tr>
-                <td className='left'>
+                <td className='leftname2'>
                     Case Description:
                 </td>
                 <div className='name'>
-                <td>
+                <td className='break'>
                 {caseRequestDetail.description}
+                
                 </td> 
                 </div>
             </tr>
             </div>
             <div className='space'>
             <tr>
-                <td className='left'>
+                <td className='leftname1'>
                     Case Document:
                 </td>
                 <div className='name'>
-                <td>
-                {caseRequestDetail.documnet}
+                <td className='break'>
+                   <a href={caseRequestDetail.documnet} target="_blank">{caseRequestDetail.documnet}</a> 
                 </td> 
                 </div>
                 
@@ -107,7 +108,7 @@ const declineCase = async (e) => {
             </div>
             <div className='space'>
             <tr>
-                <td className='left'>
+                <td className='leftname'>
                     Amount Goal:
                 </td>
                 <div className='name'>
