@@ -1,10 +1,50 @@
 import React from 'react';
 import "./ngodetail.css";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 export const NgoDetail = () => {
     const navigate = useNavigate();
+    const ID = useParams().id;
+
+    const [ngoRequestDetail, setngoRequestDetail] = useState({});
+  useEffect(() => {
+    const fetchNGORequests = async () => {
+      const res = await axios.get(`http://localhost:3003/api/admin/dashboard/getSpecificNgoRequestDetails/${ID}`);
+      setngoRequestDetail(res.data);
+    };
+    fetchNGORequests();
+  });
+
+  const acceptNGO = async (e) => {
+      e.preventDefault();
+      try{
+          await axios.patch(`http://localhost:3003/api/admin/dashboard/approve_NGO/${ID}`).then((response) => {
+              alert(response.data.message);
+          })
+      }catch (e) {
+        if (e.response && e.response.data) {
+          alert(e.response.data.message);
+        }
+      }
+  };
+
+  const declineNGO = async (e) => {
+    e.preventDefault();
+    try{
+        await axios.delete(`http://localhost:3003/api/admin/dashboard/decline_NGO/${ID}`).then((response) => {
+            alert(response.data.message);
+        })
+    }catch (e) {
+      if (e.response && e.response.data) {
+        alert(e.response.data.message);
+      }
+    }
+};
+
   return (
       <div className='maini'>
     <div className='body1i'>
@@ -21,7 +61,7 @@ export const NgoDetail = () => {
                 </td>
                 <div className='namei'>
                 <td>
-                    MMKN
+                    {ngoRequestDetail.username}
                 </td> 
                 </div>
                 
@@ -34,7 +74,7 @@ export const NgoDetail = () => {
                 </td>
                 <div className='namei'>
                 <td>
-                    contactus@gmail.com
+                {ngoRequestDetail.email}
                 </td> 
                 </div>
                 
@@ -47,7 +87,7 @@ export const NgoDetail = () => {
                 </td>
                 <div className='namei'>
                 <td>
-                    71116963
+                {ngoRequestDetail.contactNumber}
                 </td> 
                 </div>
                 
@@ -60,7 +100,7 @@ export const NgoDetail = () => {
                 </td>
                 <div className='namei'>
                 <td>
-                    12345
+                {ngoRequestDetail.officialNumber}
                 </td> 
                 </div>
                 
@@ -73,7 +113,7 @@ export const NgoDetail = () => {
                 </td>
                 <div className='namei'>
                 <td>
-                    Education
+                {ngoRequestDetail.categories}
                 </td> 
                 </div>
                 
@@ -81,8 +121,8 @@ export const NgoDetail = () => {
             </div>
         </table>
     <div className="button1i">
-        <button className="Accept1i">Accept</button>
-        <button className="Cancel1i">Reject</button>
+        <button className="Accept1i" onClick={acceptNGO}>Accept</button>
+        <button className="Cancel1i" onClick={declineNGO}>Reject</button>
       </div>
       <div>
          <form action="#">

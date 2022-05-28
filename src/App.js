@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/run" element={<Run/>} />
           <Route path="/caselist" element={<CaseList/>} />
-          <Route path="/ngodetails" element={<NgoDetail/>} />
+          <Route path="/ngodetails/:id" element={<NgoDetail/>} />
           <Route path="/messages" element={<Messages/>} />
         </Routes>
       </Router>

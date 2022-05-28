@@ -13,17 +13,34 @@
     font-weight: 600;
 }
 
-/* .widgetLgButtonNgo {
-    padding: 5px 7px;
+ .widgetLgButtonNgo {
+    padding: 5px 9px;
     border: none;
-    border-radius: 10px;
-    width: 100px;
-    margin-top:20px ;
+    border-radius: 20px;
+    width: 150px;
+    margin-top:0px ;
     margin-left: 105px;
     cursor: pointer;
+    background-color: #e5faf2;
+    color: rgb(27, 141, 166);
+    font-size: 20px;
   }
+
+  /* .widgetSmButtonCases {
+    padding: 5px 9px;
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    margin-top:0px ;
+    margin-left: 110px;
+    cursor: pointer;
+    background-color: #e5faf2;
+    color: rgb(27, 141, 166);
+    font-size: 20px;
+    margin-left: 250px;
+    } */
   
-  .widgetLgButtonNgo.Add{
+/*  .widgetLgButtonNgo.Add{
       background-color: #e5faf2;
       color: #3bb077;
       font-size: 20px;

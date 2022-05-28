@@ -1,88 +1,42 @@
 import "./NgoScreen.css";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function NgoScreen() {
   const navigate = useNavigate();
-  const Button = ({ type }) => {
-    return <button className={"widgetSmButtonNgo " + type}>{type}</button>;
-  };
+  // const Button = ({ type , id}) => {
+  //   return <button className={"widgetSmButtonNgo " + type}>{type}</button>;
+  // };
+
+  const [ngoRequests, setngoRequests] = useState({});
+  useEffect(() => {
+    const fetchNGORequests = async () => {
+      const res = await axios.get("http://localhost:3003/api/admin/dashboard/getNGOS");
+      setngoRequests(res.data);
+    };
+    fetchNGORequests();
+  },[ngoRequests]);
+
+
   return (
     <div className="widgetNgo">
       <span className="widgetSmTitleNgo">NGO request</span>
       <ul className="widgetSmList">
-        <li className="widgetSmListItemNgo">
+        {ngoRequests.length > 0 && ngoRequests.map((e) => (
+          <li className="widgetSmListItemNgo">
           <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            src="https://res.cloudinary.com/caretopia/image/upload/v1646154186/caretopia/user_axcws7.png"
             alt=""
             className="widgetSmImgNgo"
           />
           <div className="widgetSmUserNgo">
-            <span className="widgetSmUserTitleNgo" onClick={() => navigate("/ngodetails")}>NGO Name</span>
+            <span className="widgetSmUserTitleNgo" onClick={() => navigate(`/ngodetails/${e._id}`)}>{e.username}</span>
           </div>
-          <div><Button type="Accept" /></div>
-          <div><Button type="Reject" /></div>
+          <div><button className="widgetLgButtonNgo" onClick={() => navigate(`/ngodetails/${e._id}`)}>Details</button></div>
+          
         </li>
-        <li className="widgetSmListItemNgo">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgNgo"
-          />
-          <div className="widgetSmUserNgo">
-            <span className="widgetSmUserTitleNgo">NGO Name</span>
-          </div>
-          <div><Button type="Accept" /></div>
-          <div><Button type="Reject" /></div>
-        </li>
-        <li className="widgetSmListItemNgo">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgNgo"
-          />
-          <div className="widgetSmUserNgo">
-            <span className="widgetSmUserTitleNgo">NGO Name</span>
-          </div>
-          <div><Button type="Accept" /></div>
-          <div><Button type="Reject" /></div>
-        </li>
-
-        <li className="widgetSmListItemNgo">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgNgo"
-          />
-          <div className="widgetSmUserNgo">
-            <span className="widgetSmUserTitleNgo">NGO Name</span>
-          </div>
-          <div><Button type="Accept" /></div>
-          <div><Button type="Reject" /></div>
-        </li>
-        <li className="widgetSmListItemNgo">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgNgo"
-          />
-          <div className="widgetSmUserNgo">
-            <span className="widgetSmUserTitleNgo">NGO Name</span>
-          </div>
-          <div><Button type="Accept" /></div>
-          <div><Button type="Reject" /></div>
-        </li>
-        <li className="widgetSmListItemNgo">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImgNgo"
-          />
-          <div className="widgetSmUserNgo">
-            <span className="widgetSmUserTitleNgo">NGO Name</span>
-          </div>
-          <div><Button type="Accept" /></div>
-          <div><Button type="Reject" /></div>
-        </li>
+        ))}
       </ul>
     </div>
   );
