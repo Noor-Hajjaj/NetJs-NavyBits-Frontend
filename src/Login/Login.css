@@ -9,6 +9,7 @@
 .popu_headerk{
   display:flex;
   justify-content: space-between;
+  margin-left: 300px;
 }
 .texttypek{
     padding-left: 0px;
@@ -20,6 +21,14 @@
     justify-content: center;
     font-size: 30px;
 }
+
+
+
+.h3LogImDash{
+ align-items: center;
+}
+
+
 .leftk{
   padding-left: 150px;
 }

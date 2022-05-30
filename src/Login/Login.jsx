@@ -34,7 +34,7 @@ export const Login = () => {
       <div className="body1k">
         <div className="container0k">
           <div className="popu_headerk">
-            <h3>LogIn</h3>
+            <h3 className="h3LogImDash">LogIn</h3>
             {/* <h3 className='close'>X</h3> */}
           </div>
           <table className="centertabk">
