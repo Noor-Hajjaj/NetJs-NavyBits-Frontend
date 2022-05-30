@@ -24,6 +24,7 @@ export default function NgoScreen() {
       <span className="widgetSmTitleNgo">NGO requests</span>
       <ul className="widgetSmList">
         {ngoRequests.length > 0 && ngoRequests.map((e) => (
+          <div>
           <li className="widgetSmListItemNgo">
           <img
             src="https://res.cloudinary.com/caretopia/image/upload/v1646154186/caretopia/user_axcws7.png"
@@ -36,6 +37,7 @@ export default function NgoScreen() {
           <div className="deatilsm"><button className="widgetLgButtonNgo" onClick={() => navigate(`/ngodetails/${e._id}`)}>Details</button></div>
           
         </li>
+      </div>
         ))}
       </ul>
     </div>
