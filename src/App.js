@@ -1,10 +1,9 @@
 import './App.css';
 import Login from './Login/Login';
-import Run from './Run';
+import Users from './Users/Users';
 import { BrowserRouter as Router, Routes, Route ,Navigate} from "react-router-dom";
-import CaseList from './caselist/CaseList';
-import NgoDetail from './ngodetails/Ngodetail';
-import Messages from './Messages/Messages';
+import Signup from './signup/signup';
+
 
 function App() {
   return (
@@ -13,10 +12,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Navigate to ="login"/>} />
-          <Route path="/run" element={<Run/>} />
-          <Route path="/caselist/:id" element={<CaseList/>} />
-          <Route path="/ngodetails/:id" element={<NgoDetail/>} />
-          <Route path="/messages" element={<Messages/>} />
+          <Route path="/users" element={<Users/>} />
+          <Route path="/signup" element={<Signup/>} />
         </Routes>
       </Router>
     </div>

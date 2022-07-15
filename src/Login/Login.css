@@ -30,7 +30,7 @@
 
 
 .leftk{
-  padding-left: 150px;
+  padding-left: 200px;
 }
 .namek{
   /* padding-left: 5px; */
@@ -38,7 +38,7 @@
 
 }
 .smile{
-  padding-left: 7px;
+  padding-left: 10px;
   /* padding-bottom: 200px; */
 }
 .namek input{
@@ -87,6 +87,6 @@
 .closek{
   cursor: pointer;
 }
-.leftkk{
-
+.texttypek{
+  padding-left: 60px;
 }

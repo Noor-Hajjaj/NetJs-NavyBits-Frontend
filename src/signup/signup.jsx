@@ -1,9 +1,8 @@
 import React from "react";
-import "./Login.css";
+import "./signup.css";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import axios from "axios";
-import Cookies from 'js-cookie'
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -11,7 +10,7 @@ export const Login = () => {
   const email = useRef();
   const password = useRef();
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     const admin = {
       email: email.current.value,
@@ -19,10 +18,10 @@ export const Login = () => {
     };
     try {
       await axios
-        .post("http://localhost:3333/auth/login", admin)
-        .then((response) => {
-          Cookies.set('accessToken', response.data.accessToken, { expires: 0.0104167 });
-          navigate("/users");
+        .post("http://localhost:3333/auth/signup", admin)
+        .then((res) => {
+            alert(res.data)
+          navigate("/login");
         });
     } catch (e) {
       console.log(e);
@@ -37,7 +36,7 @@ export const Login = () => {
       <div className="body1k">
         <div className="container0k">
           <div className="popu_headerk">
-            <h3 className="h3LogImDash">LogIn</h3>
+            <h3 className="h3LogImDash">Signup</h3>
             {/* <h3 className='close'>X</h3> */}
           </div>
           <table className="centertabk">
@@ -67,11 +66,11 @@ export const Login = () => {
             </div>
           </table>
           <div className="button1k">
-            <button className="Cancel1k" onClick={handleLogin}>
-              Login
+            <button className="Cancel1k" onClick={handleSignup}>
+            Signup
             </button>
-            <button className="Cancel1k" onClick={() => navigate("/signup")}>
-              Signup
+            <button className="Cancel1k" onClick={() => navigate("/login")}>
+              Login
             </button>
           </div>
           <div>
